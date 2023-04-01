@@ -1,0 +1,171 @@
+.topNavBar {
+    height: 110px;
+    background: rgba(#0F0F0F, 0.8);
+    backdrop-filter: blur(25px);
+    & .logo {
+        height: 30px;
+        width: 153px;
+    }
+    & .navLink {
+        display: block;
+        padding-right: 60px;
+        &:last-child {
+            padding-right: 0 !important;
+        }
+        & .navAnchor {
+            text-decoration: none;
+            font-family: 'Poppins';
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: 0.1em;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s ease-in-out;
+            & img {
+                height: 20px;
+                width: 20px;
+                margin-right: 9px;
+            }
+            &.navBtn {
+                width: 240px;
+                height: 53px;
+                background: #FFFFFF;
+                border-radius: 119px;
+                font-weight: 600;
+                font-size: 20px;
+                line-height: normal;
+                color: #0F0F0F;
+                transition: 0.3s ease-in-out;
+                & span {
+                    margin-top: 4px;
+                    display: block;
+                }
+                &:hover {
+                    background-color: #E2D939;
+                    color: #000000 !important;
+                }
+            }
+            &:hover {
+                color: #E2D939;
+            }
+        }
+    }
+}
+
+
+.menuOffcanvas {
+    width: 280px !important;
+    background-color: $black;
+    & .offcanvas-header {
+        & .offcanvas-title {
+            & img {
+                width: 87px;
+                height: 50px;
+            }
+        }
+        & .btn-close {
+            background-size: 0.8em;
+            background-image: url(./../img/crossIcon.svg) !important;
+        }
+    }
+    & .offcanvas-body {
+        padding-top: 0;
+        & .linkItems {
+            & .linkItem {
+                padding: 6px 0px;
+                & .linkAnchor {
+                    font-family: 'Poppins';
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 14px;
+                    color: #000000;
+                    transition: 0.3s ease;
+                    letter-spacing: 0.1em;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 1399px) {
+    .topNavBar {
+        & .logo {
+        }
+        & .navLink {
+            &:last-child {
+            }
+            & .navAnchor {
+                & img {
+                }
+                &.navBtn {
+                    & span {
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 1199px) {
+    .topNavBar {
+        & .logo {
+        }
+        & .navLink {
+            // padding-right: 30px;
+            &:last-child {
+            }
+            & .navAnchor {
+                // font-size: 15px;
+                & img {
+                }
+                &.navBtn {
+                    width: 230px;
+                    height: 51px;
+                    font-size: 18px;
+                    & span {
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 991px) {
+    .topNavBar {
+        height: 85px;
+        & .logo {
+            height: 25px;
+            width: 129px;
+        }
+        & .navLink {
+            &:last-child {
+            }
+            & .navAnchor {
+                & img {
+                }
+                &.navBtn {
+                    & span {
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 575px) {
+    .topNavBar {
+        & .logo {
+        }
+        & .navLink {
+            &:last-child {
+            }
+            & .navAnchor {
+                & img {
+                }
+                &.navBtn {
+                    & span {
+                    }
+                }
+            }
+        }
+    }
+}
