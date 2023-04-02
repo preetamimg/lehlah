@@ -63,6 +63,8 @@
     <link rel="stylesheet" href="./assets/libs/owlcarousel/owl.carousel.min.css">
     <!-- player css -->
     <link rel="stylesheet" href="./assets/libs/player/plyr.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <!-- Bootstrap Css -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <!-- Custom Css -->
@@ -79,6 +81,7 @@
                     <ul class="m-0 p-0 list-unstyled d-flex align-items-center justify-content-end">
                         <li class="navLink d-none d-lg-block"><a href="#about" class="navAnchor">ABOUT</a></li>
                         <li class="navLink d-none d-lg-block"><a href="#features" class="navAnchor">FEATURES</a></li>
+                        <li class="navLink d-none d-lg-block"><a href="#" class="navAnchor"> <span class="d-inline-flex"><img src="./assets/img/navStar.svg" alt=""></span>BECOME A LEHLAH ICON</a></li>
                         <li class="navLink d-none d-lg-block"><a href="https://play.google.com/store/apps/details?id=app.lehlah" class="navAnchor navBtn"><span>Download Now</span></a></li>
                         <li class="navLink d-lg-none"><a href="#menuOffcanvas" data-bs-toggle="offcanvas" data-bs-target="#menuOffcanvas" aria-controls="menuOffcanvas" class="navAnchor"><img src="./assets/img/menuIcon.svg" alt="menu icon"></a></li>
                     </ul>
@@ -190,7 +193,11 @@
         </div>
         <div class="row mx-0">
             <div class="col-lg-6 imageCol">
-                <img src="./assets/img/stepImg.gif" alt="step gif file">
+                <div class="px-lg-5 mx-lg-5">
+                    <video class="w-100" autoplay loop>
+                        <source src="./assets/img/stepImg.webm" type="video/mp4" />
+                    </video>
+                </div>
             </div>
             <div class="col-lg-6 textCol textCol1 active">
                 <div class="row mx-0 justify-content-center pb-4">
@@ -202,7 +209,11 @@
         </div>
         <div class="row mx-0 secondStepRow">
             <div class="col-lg-6 imageCol">
-                <img src="./assets/img/stepImg.gif" alt="step gif file">
+                <div class="px-lg-5 mx-lg-5">
+                    <video class="w-100" autoplay loop>
+                        <source src="./assets/img/stepImg.webm" type="video/mp4" />
+                    </video>
+                </div>
             </div>
             <div class="col-lg-6 textCol textCol2">
                 <div class="row mx-0 justify-content-center pb-4">
@@ -214,7 +225,11 @@
         </div>
         <div class="row mx-0 thirdStepRow">
             <div class="col-lg-6 imageCol">
-                <img src="./assets/img/stepImg.gif" alt="step gif file">
+                <div class="px-lg-5 mx-lg-5">
+                    <video class="w-100" autoplay loop>
+                        <source src="./assets/img/stepImg.webm" type="video/mp4" />
+                    </video>
+                </div>
             </div>
             <div class="col-lg-6 textCol textCol3">
                 <div class="row mx-0 justify-content-center pb-4 ">
@@ -352,7 +367,7 @@
             <div class="row justify-content-between align-items-center">
                 <div class="col-lg-6 col-xxl-5">
                     <div class="videoBox">
-                        <video id="player" class="w-100" playsinline controls poster="./assets/img/videoThumb.png">
+                        <video id="player" class="w-100" playsinline poster="./assets/img/videoThumb.png">
                             <source src="./assets/video/lehlah.mp4" type="video/mp4" />
                         </video>
                     </div>
@@ -452,7 +467,7 @@
                     <div class="head">Subscribe to our Newsletter</div>
                     <div class="position-relative subscribeText">
                         <input type="text" class="form-control rounded-pill shadow-none" placeholder="Enter your Email Address">
-                        <button class="submitBtn shadow-none btn">Submit</button>
+                        <button class="submitBtn shadow-none btn" id="liveToastBtn">Submit</button>
                     </div>
                 </div>
                 <div class="col-1 d-none d-xxl-block"></div>
@@ -473,9 +488,21 @@
             <ul class="m-0 p-0 list-unstyled linkItems">                                       
                 <li class="linkItem"><a class="linkAnchor text-white text-decoration-none" href="javascript::">ABOUT</a></li>
                 <li class="linkItem"><a class="linkAnchor text-white text-decoration-none" href="javascript::">FEATURES</a></li>
+                <li class="linkItem"><a class="linkAnchor text-white text-decoration-none  d-flex align-items-center gap-1" href="javascript::"><span class="d-inline-flex align-items-center"><img src="./assets/img/navStar.svg" alt=""></span>BECOME A LEHLAH ICON</a></li>
+
             </ul>
         </div>
     </div>
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-body bg-dark text-white">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>Thank you for subscribe</div>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+          </div>
+        </div>
+      </div>
     
     <!-- Bootstrap Js -->
     <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -485,5 +512,16 @@
     <script src="./assets/libs/player/plyr.js"></script>
     <!-- Custom Js -->
     <script src="assets/js/index.js"></script>
+    <script>
+        const toastTrigger = document.getElementById('liveToastBtn')
+const toastLiveExample = document.getElementById('liveToast')
+
+if (toastTrigger) {
+  const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+  toastTrigger.addEventListener('click', () => {
+    toastBootstrap.show()
+  })
+}
+    </script>
 </body>
 </html>

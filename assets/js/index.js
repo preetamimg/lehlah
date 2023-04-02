@@ -45,7 +45,7 @@ $('.testimonialSliser').owlCarousel({
     nav: false,
     dots: false,
     autoplay:true,
-    autoplayTimeout:2000,
+    autoplayTimeout:3500,
     responsive:{
         0:{
             items:1,
@@ -193,3 +193,25 @@ gsap.utils.toArray('.stb_line_single').forEach((line, i) => {
     }
       return tl;
   }
+
+
+
+  $(window).scroll(function() {    
+    var scroll = $(window).scrollTop();
+    console.log(scroll);
+    if (scroll <= 1700) {
+        $(".textCol1").addClass("active");
+        $(".textCol2").removeClass("active");
+        $(".textCol3").removeClass("active");
+    }else if(scroll <= 2000){
+        $(".textCol1").removeClass("active");
+        $(".textCol3").removeClass("active");
+        $(".textCol2").addClass("active");
+    }
+    else if(scroll <= 2300){
+        $(".textCol3").addClass("active");
+        $(".textCol2").removeClass("active");
+        $(".textCol1").removeClass("active");
+    }
+});
+    
